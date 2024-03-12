@@ -1,9 +1,7 @@
-var mytestapp = angular.module('mytestapp', ['ngRoute']);
-
-mytestapp.controller('testcon', function ($scope, $http) {
-    $http.get('http://localhost:3000/getAllArtist').then(function (response) {
+angular.module('discoverApp', [])
+.controller('discoverController', function ($scope, $http) {
+    $http.get('http://localhost:3000/api/getAllArtist').then(function (response) {
         $scope.data = response.data.map(function (art) {
-
             return {
                 art
             };

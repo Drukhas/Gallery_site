@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="css/discover_style.css">
+  <link rel="stylesheet" href="css/discover_background.css">
+  <link rel="stylesheet" href="css/discover_font.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-route.min.js"></script>
+  <script src="js/discover.js"></script>
+
+  
+</head>
+
+<body ng-app="discoverApp">
+  <div class="card2" >
+    <div class="header">
+      <h1 style="color: black; font-size:30px;font-weight: bolder;">Art Gallery</h1>
+      <div>
+        <h2 style="color:black; font-size:25px;font-weight: bolder; justify-items: center;">Discovers</h2>
+      </div>
+      <nav class="navigation">
+        <a href="home.html">Home</a>
+        <a href="discover.html">Discovers</a>
+        <a href="login-register.html">Login</a>
+      </nav>
+    </div>
+    <div class="row" ng-controller="discoverController">
+      <div class="leftcolumn" ng-repeat="i in data">
+        <div class="card">
+          <h2>{{i.art.ImageName}}</h2>
+          <h5>{{i.art.ArtistName}}</h5>
+          <div><img src={{i.art.ImageLink}}></img></div>
+          <div class="des">
+          <p>{{i.art.ImageDescription}}</p>
+          </div>
+      </div>
+    </div>
+
+</body>
+
+</html>

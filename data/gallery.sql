@@ -21,6 +21,10 @@ SET time_zone = "+00:00";
 -- Database: `gallery`
 --
 
+CREATE OR REPLACE DATABASE `gallery`;
+
+USE `gallery`;
+
 -- --------------------------------------------------------
 
 --
@@ -73,26 +77,10 @@ INSERT INTO `images` (`ImageID`, `ImageName`, `ImageDescription`, `ArtistID`, `I
 --
 
 CREATE TABLE `users` (
-  `Username` varchar(255) DEFAULT NULL,
-  `Email` varchar(255) DEFAULT NULL,
-  `Password` varchar(255) DEFAULT NULL
+  `Username` varchar(255) NOT NULL UNIQUE,
+  `Email` varchar(255) NOT NULL UNIQUE,
+  `Password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`Username`, `Email`, `Password`) VALUES
-('john_doe', 'john.doe@example.com', 'johns_password'),
-('jane_smith', 'jane.smith@example.com', 'janes_password'),
-('bob_jones', 'bob.jones@example.com', 'bobs_password'),
-('alice_williams', 'alice.williams@example.com', 'alices_password'),
-(NULL, NULL, NULL),
-('atom', 'ok@hotmail.com', '123456789'),
-('atom', 'ok@hotmail.com', '123456789'),
-('atom', 'ok@hotmail.com', '123456789'),
-('atom', 'yeaboi@hotmail.com', '123456789'),
-('Henry', 'madtruck@hotmail.com', '12345678');
 
 --
 -- Indexes for dumped tables

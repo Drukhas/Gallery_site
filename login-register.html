@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="css/login_style.css">
+    <link rel="stylesheet" href="css/login_background.css">
+    <link rel="stylesheet" href="css/login_font.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com%22%3E/">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,300&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-route.min.js"></script>
+    <script src="js/authApp.js"></script>
+
+</head>
+
+<body ng-app="authApp">
+    <div class="header">
+        <h1 style="color: white; font-size:30px;font-weight: bolder;">Art Gallery</h1>
+        <nav class="navigation">
+            <a href="home.html">Home</a>
+            <a href="discover.html">Discovers</a>
+            <a href="login-register.html">Login</a>
+        </nav>
+    </div>
+    <div class="main">
+        <div class="container">
+            <input id="signup_toggle" type="checkbox">
+            <form class="form">
+
+                <!-- login part -->
+
+                <div class="form_front" ng-controller="registerLoginController">
+                    <div class="form_details">Login</div>
+                    <input type="text" class="input" placeholder="Username" required ng-model="loginInfo.username">
+                    <input type="password" class="input" placeholder="Password" required ng-model="loginInfo.password">
+                    <button class="btn" type="button" ng-click="login()">Login</button>
+                    <span class="switch">Don't have an account?
+                        <label for="signup_toggle" class="signup_tog">
+                            Sign Up
+                        </label>
+                    </span>
+                </div>
+
+                <!-- register part -->
+
+                <div class="form_back" ng-controller="registerLoginController">
+                    <div class="form_details">SignUp</div>
+                        <input type="text" class="input" placeholder="Username" required ng-model="registerInfo.username">
+                        <input type="email" class="input" placeholder="Email" required ng-model="registerInfo.email">
+                        <input type="password" class="input" placeholder="8 character password" minlength="8" required ng-model="registerInfo.password">
+                        <button class="btn" type="button" ng-click="register()">Signup</button>
+                    <span class="switch">Already have an account?
+                        <label for="signup_toggle" class="signup_tog">
+                            Sign In
+                        </label>
+                    </span>
+                </div>
+            </form>
+        </div>
+        <div class="footer">
+            <p style="color: white;">Midnight Sky <p2 style="color: white; font-size: small;">by</p2> (Name)
+            </p>
+        </div>
+</body>
+
+</html>
